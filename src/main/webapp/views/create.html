@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <!--    <meta charset="UTF-8">-->
+    <!--    <title>Title</title>-->
+</head>
+<h3>Hello</h3>
+<body>
+<p>
+    <a th:href="@{/employee}">Back to customer list</a>
+</p>
+    <table th:action="@{/employee}" th:method="post" th:object="${employee}">
+        ID: <input type="text" th:field="*{id}">
+        Name: <input type="text" th:field="*{name}">
+        Contact Number: <input type="text" th:field="*{contactNumber}">
+        <br>
+        <button type="submit">Submit</button>
+    </table>
+</body>
+</html>

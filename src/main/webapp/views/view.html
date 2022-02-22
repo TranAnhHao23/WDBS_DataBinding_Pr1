@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <!--    <meta charset="UTF-8">-->
+    <!--    <title>Title</title>-->
+</head>
+<body>
+<h3>Employee</h3>
+<p><a th:href="@{/employee/create}">Create New Employee</a></p>
+<table id="employee">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Contact Number</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${employee.getId()}"></td>
+        <td th:text="${employee.getName()}"></td>
+        <td th:text="${employee.getContactNumber()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
