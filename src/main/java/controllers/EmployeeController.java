@@ -12,14 +12,14 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/employee")
 public class EmployeeController {
 
-    @GetMapping
-    public ModelAndView showForm(){
-        ModelAndView modelAndView = new ModelAndView("view");
-        modelAndView.addObject("employee",new Employee());
-        return modelAndView;
-    }
+//    @GetMapping
+//    public ModelAndView showForm(){
+//        ModelAndView modelAndView = new ModelAndView("view");
+//        modelAndView.addObject("employee",new Employee());
+//        return modelAndView;
+//    }
 
-    @GetMapping("create")
+    @GetMapping
     public ModelAndView create(){
         ModelAndView modelAndView = new ModelAndView("create");
         Employee employee = new Employee();
@@ -30,7 +30,7 @@ public class EmployeeController {
     @PostMapping
     public ModelAndView addEmployee(@ModelAttribute Employee employee){
         ModelAndView modelAndView = new ModelAndView("view");
-        showForm();
+        modelAndView.addObject("employee",employee);
         return modelAndView;
     }
 }
